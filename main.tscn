@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://cb6urf3inu02i"]
+
+[ext_resource type="Script" uid="uid://bbsvv2mpj3rpb" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="FontFile" uid="uid://bqo3mvtnmmqs2" path="res://assets/fonts/minimalpixel.fnt" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cxfa4ys38pftv" path="res://assets/backgrounds/War1/Bright/War.png" id="2_h2yge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.835294, 0.662745, 0.0705882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.835294, 0.662745, 0.0705882, 1)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_o5qli")
+
+[node name="War" type="Sprite2D" parent="."]
+scale = Vector2(0.600926, 0.600926)
+texture = ExtResource("2_h2yge")
+centered = false
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 600.0
+offset_top = 425.0
+offset_right = 918.0
+offset_bottom = 575.0
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
+text = "Quit"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 240.0
+offset_top = 425.0
+offset_right = 558.0
+offset_bottom = 575.0
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mycd")
+text = "Start"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 368.0
+offset_top = 23.0
+offset_right = 787.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 128
+text = "SKY FALL
+DEMO"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

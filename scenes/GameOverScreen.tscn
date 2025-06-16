@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://bumhewo1af26r"]
+
+[ext_resource type="Script" uid="uid://dpld7ma3b57uw" path="res://scripts/GameOverScreen.gd" id="1_wojlb"]
+[ext_resource type="FontFile" uid="uid://bqo3mvtnmmqs2" path="res://assets/fonts/minimalpixel.fnt" id="2_jb1p3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1tm0t"]
+font = ExtResource("2_jb1p3")
+font_size = 48
+
+[node name="GameOverScreen" type="Node2D"]
+process_mode = 3
+visible = false
+script = ExtResource("1_wojlb")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 214.0
+offset_top = 107.0
+offset_right = 940.0
+offset_bottom = 511.0
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 23.0
+offset_right = 442.0
+offset_bottom = 71.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_1tm0t")
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 191.0
+offset_bottom = 148.0
+label_settings = SubResource("LabelSettings_1tm0t")
+
+[node name="HighScore" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 100.0
+offset_right = 614.0
+offset_bottom = 148.0
+label_settings = SubResource("LabelSettings_1tm0t")
+
+[node name="Home" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 225.0
+offset_right = 262.0
+offset_bottom = 331.0
+theme_override_fonts/font = ExtResource("2_jb1p3")
+theme_override_font_sizes/font_size = 32
+text = "Home"
+
+[node name="Replay" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 225.0
+offset_right = 608.0
+offset_bottom = 331.0
+theme_override_fonts/font = ExtResource("2_jb1p3")
+theme_override_font_sizes/font_size = 32
+text = "Replay"
+
+[connection signal="pressed" from="Panel/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Panel/Replay" to="." method="_on_replay_pressed"]
