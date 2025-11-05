@@ -7,7 +7,7 @@ This project was created to learn new technologies and practice game development
 
 ## 🚀 Main Features
 - ⚔️ **Gameplay:** Use the arrow keys to move the player, press **Z** to shoot, and **Y** to jump  
-- 🎨 **Graphics:** 2D rendering using the Cocos2d-x Sprite system  
+- 🎨 **Graphics:** 2D rendering using the Godot Engine 2D
 - 🧠 **Logic:** The player die when being touched by a enemy; bullets that hit enemies will defeat them  
 
 ---
